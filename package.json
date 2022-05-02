@@ -1,0 +1,30 @@
+{
+  "name": "create-modern-web-dev",
+  "version": "1.0.0",
+  "description": "Setup modern web app development with HTML, CSS, and JS",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack serve --config webpack.dev.js",
+    "build": "rm -rf build/ & webpack --config webpack.prod.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "copy-webpack-plugin": "^10.2.4",
+    "modern-web-dev-utils": "^1.1.2",
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.8.1",
+    "webpack-merge": "^5.8.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/butadpj/create-modern-web-dev.git"
+  },
+  "bugs": {
+    "url": "https://github.com/butadpj/create-modern-web-dev/issues"
+  },
+  "homepage": "https://github.com/butadpj/create-modern-web-dev#readme"
+}
