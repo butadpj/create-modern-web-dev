@@ -4,7 +4,7 @@
   "description": "Setup lightweight modern web app development with no configuration",
   "main": "index.js",
   "type": "module",
-  "bin": "./bin/cli.js",
+  "bin": "./bin/cli.cjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack serve --config webpack.dev.js",
