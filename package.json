@@ -1,6 +1,6 @@
 {
   "name": "create-modern-web-dev",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Setup lightweight modern web app development with no configuration",
   "main": "index.js",
   "type": "module",
