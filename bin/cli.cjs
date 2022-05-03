@@ -1,8 +1,8 @@
-import { execSync } from 'child_process';
-import path from 'path';
-import fs from 'fs';
-import colors from 'colors';
-import emoji from 'node-emoji';
+const { execSync } = require('child_process');
+const path = require('path');
+const fs = require('fs');
+const colors = require('colors');
+const emoji = require('node-emoji');
 
 if (process.argv.length < 3) {
   console.log('You have to provide a name to your app.');
