@@ -24,4 +24,4 @@ My goal was to generate a multi-page web app boilerplate like create-react-app
 
 - I created a utility package that will be used in webpack configuration: [modern-web-dev-utils](https://github.com/butadpj/modern-web-dev-utils)
 
-- I used git tags and Pull Requests: [Example PR](https://github.com/butadpj/modern-web-dev-utils/pulls?q=is%3Apr+is%3Aclosed)
+- I used git tags and Pull Requests: [Example PR](https://github.com/butadpj/create-modern-web-dev/pulls?q=is%3Apr+is%3Aclosed)
