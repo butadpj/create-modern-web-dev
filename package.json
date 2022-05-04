@@ -10,6 +10,10 @@
     "start": "webpack serve --config webpack.dev.js",
     "build": "npx rimraf ./build & webpack --config webpack.prod.js"
   },
+  "keywords": [
+    "boilerplate",
+    "create-modern-web-dev"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
