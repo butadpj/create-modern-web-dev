@@ -5,6 +5,7 @@ const path = require('path');
 const fs = require('fs');
 const colors = require('colors');
 const emoji = require('node-emoji');
+const packageJson = require('../package.json');
 
 if (process.argv.length < 3) {
   console.log('You have to provide a name to your app.');
@@ -39,8 +40,36 @@ if (projectName != '.' && projectName != './')
     process.exit(1);
   }
 
+function buildPackageJson(packageJson, packageName) {
+  try {
+    const { bin, license, homepage, repository, bugs, dependencies, ...rest } =
+      packageJson;
+
+    const newPackage = {
+      ...rest,
+      name: packageName,
+      version: '1.0.0',
+      description: '',
+      author: '',
+    };
+
+    fs.writeFileSync(
+      `${projectPath}/package.json`,
+      JSON.stringify(newPackage, null, 2),
+      'utf8',
+    );
+  } catch (error) {
+    console.log(colors.red.bold(error));
+  }
+}
+
 async function main() {
   try {
+    const packageName =
+      projectName == '.' || projectName == './'
+        ? projectPath.split(path.sep).pop()
+        : projectName;
+
     console.log(
       `${emoji.get('gear')} Setting up the app at ${colors.brightGreen(
         projectPath,
@@ -58,7 +87,14 @@ async function main() {
         'modern-web-dev-utils',
       )}, and ${colors.brightMagenta('other packages')}\n`,
     );
-    execSync('npm install');
+
+    fs.unlinkSync(path.join(projectPath, 'package.json'));
+
+    buildPackageJson(packageJson, packageName);
+
+    execSync(
+      'npm install --save-dev copy-webpack-plugin modern-web-dev-utils webpack webpack-cli webpack-dev-server webpack-merge rimraf',
+    );
 
     console.log('Finalizing the app □□□□□□□□□□□□□□\n');
     execSync('npx rimraf ./.git');
@@ -92,4 +128,5 @@ async function main() {
       );
   }
 }
+
 main();

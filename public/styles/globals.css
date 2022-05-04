@@ -10,4 +10,12 @@ body {
   justify-content: center;
   align-items: center;
   font-family: Arial, sans-serif;
+  background-color: rgb(240, 240, 240);
+}
+
+.app {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  color: rgb(20, 74, 214);
 }
