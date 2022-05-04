@@ -20,7 +20,7 @@ const projectPath =
   projectName == '.' || projectName == './'
     ? currentPath
     : path.join(currentPath, projectName);
-const git_repo = 'https://github.com/butadpj/create-modern-web-dev';
+const git_repo = 'https://github.com/butadpj/create-modern-web-dev.git';
 
 const disablePrint = { stdio: 'pipe' };
 
@@ -98,7 +98,7 @@ async function main() {
 
     console.log('Finalizing the app □□□□□□□□□□□□□□\n');
     execSync('npx rimraf ./.git');
-    fs.rmdirSync(path.join(projectPath, 'bin'), { recursive: true });
+    fs.rmSync(path.join(projectPath, 'bin'), { recursive: true });
 
     execSync('git init');
 
