@@ -12,7 +12,7 @@ cd my-app-name
 npm start
 ```
 
-**Then go to http://localhost:3000/ to open your app.**
+**Then go to http://localhost:3005/ to open your app.**
 
 **When you’re ready to deploy to production, create a minified bundle with `npm run build`.**
 
