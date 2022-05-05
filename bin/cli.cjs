@@ -22,8 +22,6 @@ const projectPath =
     : path.join(currentPath, projectName);
 const git_repo = 'https://github.com/butadpj/create-modern-web-dev.git';
 
-const disablePrint = { stdio: 'pipe' };
-
 if (projectName != '.' && projectName != './')
   try {
     fs.mkdirSync(projectPath);
@@ -63,7 +61,7 @@ function buildPackageJson(packageJson, packageName) {
   }
 }
 
-async function main() {
+function main() {
   try {
     const packageName =
       projectName == '.' || projectName == './'
@@ -75,7 +73,10 @@ async function main() {
         projectPath,
       )}...\n`,
     );
-    execSync(`git clone --depth 1 ${git_repo} ${projectPath}`, disablePrint);
+    execSync(`git clone --depth 1 ${git_repo} ${projectPath}`, {
+      stdio: 'pipe',
+      shell: '/bin/bash',
+    });
 
     if (projectName != '.' || projectName != './') process.chdir(projectPath);
 
@@ -94,13 +95,14 @@ async function main() {
 
     execSync(
       'npm install --save-dev copy-webpack-plugin modern-web-dev-utils webpack webpack-cli webpack-dev-server webpack-merge rimraf',
+      { shell: '/bin/bash' },
     );
 
     console.log('Finalizing the app □□□□□□□□□□□□□□\n');
-    execSync('npx rimraf ./.git');
+    execSync('npx rimraf ./.git', { shell: '/bin/bash' });
     fs.rmSync(path.join(projectPath, 'bin'), { recursive: true });
 
-    execSync('git init');
+    execSync('git init', { shell: '/bin/bash' });
 
     console.log(
       `${colors.brightGreen('Success!')} ${emoji.get(
