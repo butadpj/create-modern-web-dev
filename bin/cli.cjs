@@ -26,15 +26,15 @@ if (projectName != '.' && projectName != './')
   try {
     fs.mkdirSync(projectPath);
   } catch (error) {
-    if (error.code === 'EEXIST') {
+    if (error.code === 'EEXIST')
       console.log(
         colors.red.bold(
           `The file ${projectName} already exist in the current directory, please give it another name.`,
         ),
       );
-    } else {
-      console.log(colors.red.bold(error.message));
-    }
+
+    console.log(colors.red.bold(error.message));
+
     process.exit(1);
   }
 
@@ -128,6 +128,8 @@ function main() {
           `Destination path ${projectPath} is not an empty directory`,
         ),
       );
+
+    console.log(colors.red.bold(error));
   }
 }
 
