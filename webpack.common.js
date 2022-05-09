@@ -1,8 +1,7 @@
 import path from 'path';
-import fs from 'fs';
 import {
   getPageTemplatesChunkEntryPoints,
-  getPagesTemplateWithChunk,
+  getPageTemplatesWithChunk,
   htmlWebpackPluginTemplates,
   createPageTemplates,
   getScriptFoldersIn,
@@ -15,7 +14,7 @@ const __dirname = path.resolve();
 
 export default {
   entry: getPageTemplatesChunkEntryPoints(
-    getPagesTemplateWithChunk('./pages', './script'),
+    getPageTemplatesWithChunk('./pages', './script'),
     './script',
   ),
   output: {

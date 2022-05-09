@@ -1,6 +1,6 @@
 {
   "name": "create-modern-web-dev",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "Setup lightweight modern web app development with no configuration",
   "main": "index.js",
   "type": "module",
@@ -19,7 +19,7 @@
   "dependencies": {
     "colors": "^1.4.0",
     "copy-webpack-plugin": "^10.2.4",
-    "modern-web-dev-utils": "^1.1.2",
+    "modern-web-dev-utils": "^1.1.4",
     "node-emoji": "^1.11.0",
     "rimraf": "^3.0.2",
     "webpack": "^5.72.0",
