@@ -75,7 +75,6 @@ function main() {
     );
     execSync(`git clone --depth 1 ${git_repo} "${projectPath}"`, {
       stdio: 'pipe',
-      shell: '/bin/bash',
     });
 
     if (projectName != '.' || projectName != './') process.chdir(projectPath);
@@ -95,14 +94,13 @@ function main() {
 
     execSync(
       'npm install --save-dev copy-webpack-plugin modern-web-dev-utils webpack webpack-cli webpack-dev-server webpack-merge rimraf',
-      { shell: '/bin/bash' },
     );
 
     console.log('Finalizing the app □□□□□□□□□□□□□□\n');
-    execSync('npx rimraf ./.git', { shell: '/bin/bash' });
+    execSync('npx rimraf ./.git');
     fs.rmSync(path.join(projectPath, 'bin'), { recursive: true });
 
-    execSync('git init', { shell: '/bin/bash' });
+    execSync('git init');
 
     console.log(
       `${colors.brightGreen('Success!')} ${emoji.get(
