@@ -73,7 +73,7 @@ function main() {
         projectPath,
       )}...\n`,
     );
-    execSync(`git clone --depth 1 ${git_repo} ${projectPath}`, {
+    execSync(`git clone --depth 1 ${git_repo} "${projectPath}"`, {
       stdio: 'pipe',
       shell: '/bin/bash',
     });
