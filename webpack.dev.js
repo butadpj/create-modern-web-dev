@@ -7,6 +7,8 @@ export default merge(common, {
   devServer: {
     port: 3005,
     compress: true,
-    static: './public',
+    static: ['./public', './pages'],
+    hot: 'only',
+    open: true,
   },
 });
