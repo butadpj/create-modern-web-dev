@@ -92,9 +92,7 @@ function main() {
 
     buildPackageJson(packageJson, packageName);
 
-    execSync(
-      'npm install --save-dev copy-webpack-plugin modern-web-dev-utils webpack webpack-cli webpack-dev-server webpack-merge rimraf',
-    );
+    execSync('npm install modern-web-dev-scripts rimraf');
 
     console.log('Finalizing the app □□□□□□□□□□□□□□\n');
     execSync('npx rimraf ./.git');
