@@ -59,6 +59,6 @@ My goal was to generate a multi-page web app boilerplate like create-react-app
 
 - Created a utility package that will be used in webpack configuration: [modern-web-dev-utils](https://www.npmjs.com/package/modern-web-dev-utils)
 
-- Create another package to move webpack configuration and package.json scripts to a separate package [modern-web-dev-scripts](https://www.npmjs.com/package/modern-web-dev-scripts)
+- Created another package to contain webpack configuration and package.json scripts [modern-web-dev-scripts](https://www.npmjs.com/package/modern-web-dev-scripts)
 
 - I used git tags and Pull Requests: [Example PR](https://github.com/butadpj/create-modern-web-dev/pulls?q=is%3Apr+is%3Aclosed)
